@@ -1,3 +1,4 @@
+from unittest import TextTestRunner
 import pygame
 import random
 import os
@@ -105,7 +106,7 @@ class Bird:
 class Pipe():
 
     GAP = 200
-    VEL = 12
+    VEL = 11
 
     def __init__(self, x):
 
@@ -260,6 +261,7 @@ def eval_genomes(genomes, config):
             if event.type == pygame.QUIT:
                 run = False
                 pygame.quit()
+                print("Game Ended Abruptly!")
                 quit()
                 break
 
@@ -314,7 +316,6 @@ def eval_genomes(genomes, config):
                 nets.pop(birds.index(bird))
                 ge.pop(birds.index(bird))
                 birds.pop(birds.index(bird))
-
         draw_window(WIN, birds, pipes, base, score, gen, pipe_ind)
 
         # break if score gets large enough
@@ -340,7 +341,11 @@ def run(config_file):
     winner = p.run(eval_genomes, 50)
 
     # show final stats
+    node_names={-1:'Distance from pipe', -2:"Height of Pipe", -3:"Height of Bird", 0:'Jump'}
     print('\nBest genome:\n{!s}'.format(winner))
+    visualize.draw_net(config, winner, True, node_names=node_names)
+    visualize.plot_species(stats, view=True)
+    visualize.plot_stats(stats, view=True)
 
 
 if __name__ == '__main__':

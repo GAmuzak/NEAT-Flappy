@@ -110,7 +110,7 @@ def plot_species(statistics, view=False, filename='speciation.svg'):
     plt.close()
 
 
-def draw_net(config, genome, view=False, filename=None, node_names=None, show_disabled=True, prune_unused=False,
+def draw_net(config, genome, view=True, filename="Network.pdf", node_names=None, show_disabled=True, prune_unused=False,
              node_colors=None, fmt='svg'):
     # Attributes for network nodes.
     if graphviz is None:
@@ -154,6 +154,7 @@ def draw_net(config, genome, view=False, filename=None, node_names=None, show_di
         connections = set()
         for cg in genome.connections.values():
             if cg.enabled or show_disabled:
+                # print(type(cg))
                 connections.add((cg.in_node_id, cg.out_node_id))
 
         used_nodes = copy.copy(outputs)
