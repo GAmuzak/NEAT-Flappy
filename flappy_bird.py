@@ -105,7 +105,7 @@ class Bird:
 class Pipe():
 
     GAP = 200
-    VEL = 5
+    VEL = 12
 
     def __init__(self, x):
 
