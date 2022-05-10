@@ -106,7 +106,7 @@ class Bird:
 class Pipe():
 
     GAP = 200
-    VEL = 11
+    VEL = 10
 
     def __init__(self, x):
 
@@ -317,9 +317,6 @@ def eval_genomes(genomes, config):
                 ge.pop(birds.index(bird))
                 birds.pop(birds.index(bird))
         draw_window(WIN, birds, pipes, base, score, gen, pipe_ind)
-
-        # break if score gets large enough
-
 
 
 def run(config_file):
