@@ -4,7 +4,6 @@ digraph {
 	"Height of Pipe" [fillcolor=lightgray shape=box style=filled]
 	"Height of Bird" [fillcolor=lightgray shape=box style=filled]
 	Jump [fillcolor=lightblue style=filled]
-	"Distance from pipe" -> Jump [color=red penwidth=0.13414335929561455 style=solid]
-	"Height of Pipe" -> Jump [color=green penwidth=0.5657531175471978 style=solid]
-	"Height of Bird" -> Jump [color=red penwidth=0.5953087889132214 style=solid]
+	"Height of Pipe" -> Jump [color=green penwidth=0.5456901122541543 style=solid]
+	"Height of Bird" -> Jump [color=red penwidth=0.6023209771184163 style=solid]
 }
